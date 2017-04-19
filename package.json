@@ -25,7 +25,7 @@
     "dev": "npm-run-all --parallel hot-server open-dev watch",
     "hot-server": "webpack-dev-server --host 0.0.0.0 --config webpack-hot-dev-server.config.js --inline --hot --progress",
     "open-dev": "sleep 3 && node -e 'require(\"open\")(\"http://localhost:3200\")'",
-    "open-static": "node -e 'require(\"open\")(\"http://localhost:3001\")'",
+    "open-static": "node -e 'require(\"open\")(\"http://localhost:8080\")'",
     "lint": "eslint --cache --ext '.js,.jsx' src test",
     "lint-errors": "eslint --cache --quiet --ext '.js,.jsx' src test",
     "lint-fix": "eslint --cache --ext '.js,.jsx' src test --fix",
@@ -33,7 +33,7 @@
     "test-in-node": "npm run lint-errors && npm run just-test-in-node",
     "just-test": "karma start --config karma.conf.js",
     "just-test-in-node": "mocha --recursive --compilers js:babel-core/register test/plugins",
-    "serve-static": "http-server -i -a 0.0.0.0 -p 3001",
+    "serve-static": "http-server -i -a 0.0.0.0 -p 8080",
     "prestart": "npm install",
     "start": "npm-run-all --parallel serve-static open-static",
     "watch": "webpack --config webpack.config.js --watch --progress"
